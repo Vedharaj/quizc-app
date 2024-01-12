@@ -62,6 +62,7 @@ function App() {
   function navigateToHome(){
     const url = `https://opentdb.com/api.php?amount=${quizConfig.amount}&category=${quizConfig.category}&difficulty=${quizConfig.difficulty}&type=multiple`
     localStorage.setItem('url', url)
+    fetchData(url)
     navigate('/quiz')
   }
 
