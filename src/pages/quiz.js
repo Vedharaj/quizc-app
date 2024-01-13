@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-export default function Home({BackgroundEffect, quiz, fetchData}){
+export default function Quiz({BackgroundEffect, quiz, fetchData}){
 
     const navigate = useNavigate()
     
@@ -12,12 +12,8 @@ export default function Home({BackgroundEffect, quiz, fetchData}){
     const [score, setScore] = useState(0)
 
     useEffect(()=>{
-        fetchData(localStorage.getItem('url'))
-        // navigate(0   )
-    }, [])
-
-    useEffect(()=>{
         const newArray = []
+        if (quiz){
         quiz.forEach((e, i) => {
             newArray.push({
                 id:i,
@@ -30,12 +26,19 @@ export default function Home({BackgroundEffect, quiz, fetchData}){
         setTimeout(()=>{
             setLoading(false)
         },2000)
+        } else{
+            navigate(-1)
+        }
+    // eslint-disable-next-line
     },[quiz])
 
     
-    function handleSubmit(){
+    async function handleSubmit(){
         if (isSubmit){
-            navigate(-1)
+            await fetchData()
+            setLoading(true)
+            setIsSubmit(false)
+            // navigate(0)
         }else {setIsSubmit(true)
             setBtnDisable(true)
             setAnswerManage(ps=>{
@@ -56,6 +59,10 @@ export default function Home({BackgroundEffect, quiz, fetchData}){
                 : e
             )
         })
+    }
+
+    function handleBackBtn(){
+        navigate(-1)
     }
 
     function AnsBtn({ans, j}){
@@ -114,7 +121,10 @@ export default function Home({BackgroundEffect, quiz, fetchData}){
                 :
                 <div className='cus-container2'>
                     <div className="mt-1">
-                        <h2 className="text-center text-primary fw-bold">Questions</h2>
+                        <button className="btn mb-2" onClick={handleBackBtn}>
+                            <i className="fa fa-arrow-left fa-lg"></i>
+                        </button>
+                        <h2 className="d-inline ms-3 text-primary fw-bold">Questions</h2>
                     </div>
                     <div className="mt-4 text-start">
                         <Questions />

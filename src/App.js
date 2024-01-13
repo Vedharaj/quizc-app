@@ -4,7 +4,7 @@ import {Routes, Route} from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 
 
-import Home from './pages/home'
+import Quiz from './pages/quiz'
 import Start from './pages/start'
 
 function App() {
@@ -20,15 +20,16 @@ function App() {
   
   const [quiz, setQuiz] = useState([])
   
-  function fetchData(url){
-      fetch(url)
-      .then(res=>res.json())
-      .then(data=>{
-          // console.log(data.results)
-          setQuiz(data.results)})
-      .catch(err=>{
-        console.log(err)
-      })
+  function fetchData(){
+    const url = `https://opentdb.com/api.php?amount=${quizConfig.amount}&category=${quizConfig.category}&difficulty=${quizConfig.difficulty}&type=multiple`
+    fetch(url)
+    .then(res=>res.json())
+    .then(data=>{
+      setQuiz(data.results)
+    })
+    .catch(err=>{
+      // console.log(err)
+    })
   }
 
   const BackgroundEffect = ()=>{
@@ -59,10 +60,8 @@ function App() {
     // console.log(quizConfig)
   }
 
-  function navigateToHome(){
-    const url = `https://opentdb.com/api.php?amount=${quizConfig.amount}&category=${quizConfig.category}&difficulty=${quizConfig.difficulty}&type=multiple`
-    localStorage.setItem('url', url)
-    fetchData(url)
+  async function navigateToHome(){
+    await fetchData()
     navigate('/quiz')
   }
 
@@ -80,7 +79,7 @@ function App() {
           />
         <Route 
           path='/quiz' 
-          element={<Home
+          element={<Quiz
             quiz={quiz}
             BackgroundEffect={BackgroundEffect} 
             fetchData={fetchData}
