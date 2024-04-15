@@ -26,7 +26,6 @@ export default function Start({quizConfig, BackgroundEffect, SetQuizConfig, navi
                         >
                       <option value={5} selected>5</option>
                       <option value={10}>10</option>
-                      <option value={20}>20</option>
                     </select>
                     <select 
                         className="form-select mt-3"
