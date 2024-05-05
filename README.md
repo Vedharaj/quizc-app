@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# React Based Quizc App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Author Vedharaj](https://img.shields.io/badge/Author-Vedharaj-d62828)](https://www.linkedin.com/in/ebaneshar-vedharaj-422566214)
 
-## Available Scripts
+### Introduction
+- Quiz apps can be educational, testing users' knowledge on specific subjects like Film, mathematics, sport, history, politics etc..,
+- Users typically select answers from multiple choices or input their responses directly.
+- After answering the questions showing the correct answers and displaying scores.
 
-In the project directory, you can run:
+### Technologies Used
+- React
 
-### `npm start`
+### Installation
+To run the application locally, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository from GitHub:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```
+   git clone https://github.com/Vedharaj/quizc-app.git
+   ```
 
-### `npm test`
+2. Navigate into the project directory:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```
+   cd quizc-app
+   ```
 
-### `npm run build`
+3. Start the server:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```
+   nom install
+   npm start
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+7. Open your browser and visit `http://localhost:3000` to view the application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Folder Structure
+- `public`: Conatins html file
+- `src`: Contain all jsx files
+    - `images`: assests for applications
+    - `pages`: Contains pages
 
-### `npm run eject`
+### Dependencies
+- `React`
+- `react-countdown`: can customizable countdown component
+- `react-router-dom`: Routing library for React applications
+- `nanoid`: unique string ID generator
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Pages
+- `start`: home page to customize quiz questions
+- `quiz`: contain multi-choice questions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Open Trivia Database API
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The Open Trivia Database (opentdb.com) is an online platform that provides an API (Application Programming Interface) for accessing a vast collection of trivia questions and answers.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Conclusion
+Thank you for using our React basedQuizc App! We hope you enjoy this game.
